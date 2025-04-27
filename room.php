@@ -1,8 +1,6 @@
 <?php
 include_once 'admin/include/class.user.php'; 
 $user=new User();
-
-
 ?>
 
 
@@ -61,16 +59,10 @@ $user=new User();
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="room.php">Room &amp; Facilities</a></li>
+                    <li class="active"><a href="room.php">Room &amp; Facilities</a></li>
                     <li><a href="reservation.php">Online Reservation</a></li>
+                    <li><a href="review.php">Review</a></li>
                     <li><a href="admin.php">Admin</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="admin.php?q=logout">
-                            <button type="button" class="btn btn-danger">Logout</button>
-                        </a>
-                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="http://www.facebook.com"><img src="images/facebook.png"></a></li>
@@ -95,20 +87,22 @@ $user=new User();
                     
                     echo "
                             <div class='row'>
-                            <div class='col-md-2'></div>
+                            <div class='col-md-3'></div>
                             <div class='col-md-6 well'>
                                 <h4>".$row['roomname']."</h4><hr>
                                 <h6>No of Beds: ".$row['no_bed']." ".$row['bedtype']." bed.</h6>
                                 <h6>Facilities: ".$row['facility']."</h6>
                                 <h6>Price: ".$row['price']." tk/night.</h6>
                             </div>
-                            &nbsp;&nbsp;
-                            <a href='admin/edit_room_cat.php?roomname=".$row['roomname']."'><button class='btn btn-primary button'>Edit</button></a>
+                            <div class='col-md-3'>
+                                <a href='./booknow.php?roomname=".$row['roomname']."'><button class='btn btn-primary button'>Book Now</button> </a>
+                            </div>   
                             </div>
+                            
                             
                         
                     
-                         ";
+                         "; //echo end
                     
                     
                 }

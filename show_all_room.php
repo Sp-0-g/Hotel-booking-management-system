@@ -63,6 +63,7 @@ $user=new User();
                     <li><a href="index.php">Home</a></li>
                     <li><a href="room.php">Room &amp; Facilities</a></li>
                     <li><a href="reservation.php">Online Reservation</a></li>
+                    <li><a href="review.php">Review</a></li>
                     <li><a href="admin.php">Admin</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -83,7 +84,7 @@ $user=new User();
         
         <?php
         
-        $sql="SELECT * FROM room_category";
+        $sql="SELECT * FROM rooms WHERE book='true'";
         $result = mysqli_query($user->db, $sql);
         if($result)
         {
@@ -97,16 +98,17 @@ $user=new User();
                             <div class='row'>
                             <div class='col-md-2'></div>
                             <div class='col-md-6 well'>
-                                <h4>".$row['roomname']."</h4><hr>
-                                <h6>No of Beds: ".$row['no_bed']." ".$row['bedtype']." bed.</h6>
-                                <h6>Facilities: ".$row['facility']."</h6>
-                                <h6>Price: ".$row['price']." tk/night.</h6>
+                                <h4>".$row['room_cat']."</h4><hr>
+                                <h6>Checkin: ".$row['checkin']." and checkout: ".$row['checkout']."</h6>
+                                <h6>Name: ".$row['name']."</h6>
+                                <h6>Phone: ".$row['phone']."</h6>
+                                <h6>Booking Condition: ".$row['book']."</h6>
                             </div>
                             &nbsp;&nbsp;
-                            <a href='admin/edit_room_cat.php?roomname=".$row['roomname']."'><button class='btn btn-primary button'>Edit</button></a>
+                            <a href='edit_all_room.php?id=".$row['room_id']."'><button class='btn btn-primary button'>Edit</button></a>
                             </div>
                             
-                        
+                    
                     
                          ";
                     

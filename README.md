@@ -1,2 +1,16 @@
-# Hotel-booking-management-system
-Hotel booking management is a critical aspect of the hospitality industry, directly impacting customer satisfaction, revenue generation, and operational efficiency. With the rise of online travel agencies (OTAs), mobile applications, and dynamic pricing models, the landscape of hotel booking has evolved significantly. 
+# hotel-booking 
+**Online Hotel Booking &amp; Management System**
+
+**User Role**
+
+- User can view Room facilities, price and availability of the room
+- They can book their desire room from online.
+
+**Admin Role**
+
+- Secure Login System for Admin Panel
+- Add, Delete, Edit Room Facilities
+- Add, Delete, Edit Room Category
+- ADD, Remove, Edit Number of Rooms
+- View Booked Room
+- Add new Admin
